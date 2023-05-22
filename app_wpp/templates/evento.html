@@ -3,23 +3,30 @@
 {%block content%} 
 <h2>EVENTO</h2>
 
-<body style='background-color: rgb(97, 32, 32);'align="center">
-<label>Titulo:</label>
+<form action="submit" method="POST">{%csrf_token%}
 
-<br>
-<input type="text" name="titulo" size="23">
-<br><br><br><br><br>
+    <body style='background-color: rgb(97, 32, 32);'align="center">
+    <label>Titulo:</label>
 
-<label>Data do Evento:</label>
-<br>
-<input type="datetime-local" name="data_evento">
-<br><br><br><br><br>
+    <br>
+    <input type="text" name="titulo" size="23">
+    <br><br><br><br><br>
 
-<label>Descrição</label>
-<br>
-<textarea name="Descrição" id="" cols="30" rows="10"></textarea>
-<br><br><br><br><br>
+    <label>Data do Evento:</label>
+    <br>
+    <input type="datetime-local" name="data_evento">
+    <br><br><br><br><br>
+
+    <label>Descrição</label>
+    <br>
+    <textarea name="descricao" id="" cols="23" rows="20"></textarea>
+    <br><br><br><br><br>
+    <button type="submit">Salvar</button>
+    <a href="/">
+    <button type="button">Cancelar</button>
+    </a>
+
 
 </body>
-
+</form>
 {%endblock%}

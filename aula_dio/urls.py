@@ -1,4 +1,3 @@
-
 from django.contrib import admin
 from django.urls import path
 from app_wpp import views
@@ -8,8 +7,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('home/', views.lista_eventos),
     path('home/evento/', views.Evento),
+    path('home/evento/submit', views.submit_Evento),
     path('', RedirectView.as_view(url='/home/')),
     path('login/', views.login_user),
     path('login/submit', views.submit_login),
     path('logout/', views.logout_user)
+    
 ]
