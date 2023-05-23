@@ -1,14 +1,25 @@
 {% extends "model-page.html"%}
 
 {%block content%}
+<body style='background-color: rgb(202, 90, 90);'align="center">
+    
     <h2>Agendamento</h2>
-
-    <a href="evento/"><button type="button">Novo Evento</button></a>
+<br><br><br><br>
+    <a href="evento/">
+    <button type="button">Novo Evento</button>
+    </a>
+    
+    <br><br><br><br>
     
     <ul style="font-size: 18px">
         {% for evento in eventos%}
-            <li>{{evento.titulo}} --- {{evento.data_evento}} --- {{evento.descricao}} --- Evento criado em {{evento.data_criacao}} </li>
+            <li>
+                {{evento.titulo}} --- Data e hora do Evento: {{evento.get_data_evento}} --- {{evento.descricao}} --- Evento criado em {{evento.data_criacao}} 
+                (<a href='evento/?id={{evento.id}}'>Editar</a> 
+                | <a href='evento/delete/{{evento.id}}/'>Excluir</a>)
+            </li>
         {%endfor%}
-    </ul>
-
+    </ul><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+       
 {%endblock%}

@@ -8,9 +8,9 @@ urlpatterns = [
     path('home/', views.lista_eventos),
     path('home/evento/', views.Evento),
     path('home/evento/submit', views.submit_Evento),
+    path('home/evento/delete/<int:id_evento>/', views.delete_Evento),
     path('', RedirectView.as_view(url='/home/')),
     path('login/', views.login_user),
     path('login/submit', views.submit_login),
-    path('logout/', views.logout_user)
-    
+    path('logout/', views.logout_user)    
 ]

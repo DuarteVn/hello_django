@@ -5,21 +5,23 @@
 
 <form action="submit" method="POST">{%csrf_token%}
 
-    <body style='background-color: rgb(97, 32, 32);'align="center">
+    <body style='background-color: rgb(202, 90, 90);'align="center">
     <label>Titulo:</label>
-
+    
+    <input type="number" name="id_evento" value="{{Evento.id}}" hidden>
+    
     <br>
-    <input type="text" name="titulo" size="23">
+    <input type="text" name="titulo" size="23" value="{{Evento.titulo}}">
     <br><br><br><br><br>
 
-    <label>Data do Evento:</label>
+    <label style="color: white;">Data do Evento:</label>
     <br>
-    <input type="datetime-local" name="data_evento">
+    <input type="datetime-local" name="data_evento" value="{{evento.get_data_input_evento}}">
     <br><br><br><br><br>
 
-    <label>Descrição</label>
+    <label style="color: white;">Descrição</label>
     <br>
-    <textarea name="descricao" id="" cols="23" rows="20"></textarea>
+    <textarea name="descricao" id="" cols="23" rows="20">{{Evento.descricao}}</textarea>
     <br><br><br><br><br>
     <button type="submit">Salvar</button>
     <a href="/">
